@@ -1,0 +1,388 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+html {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/body-bg.jpg') top center no-repeat;
+	background-color: #000;
+}
+
+body {
+	
+}
+
+
+
+
+
+/*  HEADER  */
+/*  ----------------------------------------------------------------  */
+header {
+	width: 950px;
+	height: 160px;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/*  FOOTER  */
+/*  ----------------------------------------------------------------  */
+
+
+
+
+
+
+
+
+/*  WRAPPERS  */
+/*  ----------------------------------------------------------------  */
+#wrapper {
+	width: 950px;
+	height: auto;
+	overflow: auto;
+	background: #000;
+	margin: 0 auto 50px auto;
+	padding-bottom: 50px;
+}
+
+#cat-breadcrumb {
+	width: 950px;
+	height: 25px;
+	background: #1d1d1d;
+	margin-bottom: 10px;
+}
+
+#cat-nav {
+	width: 170px;
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+#cat-content {
+	width: 730px;
+	float: right;
+	margin: 0 10px 0 0;
+}
+
+
+
+
+
+/*  CATALOG  :  TITLES  */
+/*  ----------------------------------------------------------------  */
+.cat-sec-title {
+	margin-bottom: 20px;	
+	padding-bottom: 1px;
+	border-bottom: 1px dotted #333;
+}
+
+.cat-sec-title h3 {
+	font-size: 2.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+
+
+
+/*  CATALOG  :  NAV  */
+/*  ----------------------------------------------------------------  */
+ul.cat-list {
+	margin-bottom: 20px;
+}
+
+ul.cat-list li.cat-list-title {
+	color: #fff;	
+	border-bottom: 1px dotted #333;
+	padding-bottom: 1px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+ul.cat-list li {
+	margin: 0 0 3px 0;
+}
+
+ul.cat-list li a {
+	color: #ff0000;
+	text-decoration: none;	
+}
+
+ul.cat-list li a:hover {
+	color: #fff;
+}
+
+
+
+
+/*  CATALOG  :  PRODUCT THUMBNAILS IN FULL GALLERY DISPLAY  */
+/*  ----------------------------------------------------------------  */
+.cat-product-gal-thumb {
+	position: relative;
+	width: 234px;
+	height: 240px;
+	background: #222;
+	border: 1px solid #333;
+	margin: 0 11px 11px 0;
+	float: left;
+	overflow: hidden;
+}
+
+.cat-product-gal-thumb:hover {
+	border: 1px solid #ff0000;
+}
+
+.last-thumb {
+	margin: 0 0 9px 0;
+}
+
+.cat-product-thumb {
+	position: absolute;
+	top: 0; 
+	left: 0;
+	z-index: 1;
+}
+
+.cat-product-gal-name {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 234px;
+	height: 40px;
+	background: #000;
+}
+
+.cat-product-gal-name p {
+	text-align: center;
+	color: #fff;
+	line-height: 40px;
+}
+
+.cat-product-gal-name a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
+
+
+
+/*  CATALOG  :  BREADCRUMB SYSTEM  */
+/*  ----------------------------------------------------------------  */
+.cat-breadcrumb-slot {
+	margin: 0 3px;
+	float: left;
+}
+
+.slot-break {
+	margin: 0 0 0 0;
+	float: left;
+}
+
+#cat-breadcrumb-list {
+	height: 25px;
+}
+
+#cat-breadcrumb-list li {
+	display: -moz-inline-stack;  /* IE FIX */
+	display: inline-block;
+	zoom: 1;  /* IE FIX */
+	*display: inline;  /* IE FIX */
+}
+
+#cat-breadcrumb-list li a {
+	font-size: 0.9em;
+	color: #555;
+	text-decoration: none;
+}
+
+
+
+
+
+
+/*  CATALOG  :  INDIVIDUAL PRODUCT PAGE  */
+/*  ----------------------------------------------------------------  */
+.cat-product-image-wrap {
+	width: 410px;
+	background: #1d1d1d;
+	padding: 10px;
+	float: left;
+}
+
+.cat-product-image {
+	width: 408px;
+	height: 375px;
+	background: #000;
+	border: 1px solid #555;
+}
+
+.cat-product-swatches {
+	width: 410px;
+	height: 40px;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+ul.cat-product-swatch-list {
+	margin: 0; padding: 0;
+}
+
+ul.cat-product-swatch-list li {
+	display: -moz-inline-stack;  /* IE FIX */
+	display: inline-block;
+	zoom: 1;  /* IE FIX */
+	*display: inline;  /* IE FIX */
+	width: 36px;
+	height: 36px;
+	background: #000;
+	border: 1px solid #555;
+	padding: 1px;
+	margin-right: 8px;
+}
+
+ul.cat-product-swatch-list li:last-child {
+	margin-right: 0;
+}
+
+ul.cat-product-swatch-list li:hover, ul.cat-product-swatch-list li.currentSwatch {	/* currentSwatch list class */
+	border: 1px solid #ff0000;
+}
+
+.cat-product-description {
+	width: 260px;
+	float: right;
+	padding: 5px 10px 0 0; 	/* right padding for some space between edge and text */
+}
+
+.cat-product-description p {
+	line-height: 1.3em;
+	margin-bottom: 20px;
+	color: #999;
+	font-size: 0.9em;
+}
+
+p.cat-product-title {
+	font-weight: bold;
+	font-size: 1em;
+	color: #fff;
+	margin-bottom: 0;
+}
+
+div.cat-product-nav {
+	padding: 20px 0;		
+}
+
+ul.cat-product-nav-btn li {
+	display: -moz-inline-stack;  /* IE FIX */
+	display: inline-block;
+	zoom: 1;  /* IE FIX */
+	*display: inline;  /* IE FIX */
+	padding: 4px 6px;
+	background: #1d1d1d;
+}
+
+ul.cat-product-nav-btn li:hover {
+	background: #fff;
+}
+
+ul.cat-product-nav-btn li a {
+	font-size: 0.9em;
+	color: #555;
+	text-decoration: none;
+}
+
+ul.cat-product-nav-btn li:hover a {
+	color: #000;
+}
+
+
+
+
+
+
+
+
+/*  CATALOG  :  COMMON  */
+/*  ----------------------------------------------------------------  */
+.left {
+	float: left;
+}
+
+
+
+
+
+
+
+/*  FONT STYLES  */
+/*  ----------------------------------------------------------------  */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #fff;
+}
+	
+

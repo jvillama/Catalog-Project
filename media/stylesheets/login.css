@@ -1,0 +1,47 @@
+#login-title {
+	padding-top: 50px;
+	width: 920px;
+	text-align: center;
+	/*
+	margin: 50px 0 0 0;
+	*/
+}
+
+#login-title h1 {
+	font-size: 2.5em;
+	text-transform: uppercase;
+}
+
+#login-form-wrapper {
+	width: 950px;
+}
+
+#login-form {
+	width: 250px;
+	padding-top: 50px;
+	margin: 0 auto;
+}
+
+.form-block {
+	margin-bottom: 10px;
+	clear: both;
+}
+
+#cat-login-form input {
+	border: 1px solid #333;
+	/*background: #000;*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	/*color: #fff;*/
+	padding: 7px 6px;
+	width: 200px;
+}
+
+#cat-login-form input#submit {
+	background: #222;
+	color: #777;
+	width: 70px;
+	font-size: 9px;
+	text-transform: uppercase;
+	cursor: pointer;
+}

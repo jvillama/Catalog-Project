@@ -1,0 +1,37 @@
+<header id="retailer">
+	<div id="user-header">
+	{% if user.is_authenticated %}
+	
+	<p>Welcome, {% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
+
+		{% url catalog:logoutCatalog as logout_url %}
+		{% if logout_url %}
+			<a href="{{ logout_url }}">Log out</a>
+		{% endif %}
+
+		{% comment %}
+		<a href="{% url apps.catalog.views.passwordChange %}">Change Password</a>
+		{% endcomment %}
+		<a href="{% url apps.catalog.views.logoutCatalog %}">/ logout</a>
+	{% else %}
+		<a href="{% url django.contrib.auth.views.login %}">/ login</a>
+	{% endif %}
+	</p>
+	</div>
+    <div id="retailer-logo" onclick="location.href='{% url apps.catalog.views.index %}'" style="cursor: pointer;"></div>
+    
+    <div id="retailer-nav">
+        <ul id="retailer-nav-list">
+            <li><a href="{% url apps.catalog.views.index %}">Retailer Home</a></li>
+            <li>|</li>
+            <li><a href="{% url apps.retailer.views.seasonal %}">Seasonal Support Imagery</a></li>
+            <li>|</li>
+            <li><a href="{% url apps.retailer.views.document %}">Documents</a></li>
+            <li>|</li>
+            <li><a href="{% url apps.retailer.views.fixture %}">Fixtures</a></li>
+            <li>|</li>
+            <li><a href="{% url apps.coc.views.home %}">COC</a></li>
+            <li class="right"><a href="http://www.volcom.com" target="_blank">back to Volcom.com</a></li>
+        </ul>
+    </div>
+</header>

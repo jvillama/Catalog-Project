@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Import Line CSV File' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Volcom Rep/Retailer Resource Center' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+</div>
+
+	{% if form %}
+	<div class="form">
+		<strong>{{form.file.label}}</strong>
+		<form method="POST" action="." enctype="multipart/form-data">
+			{{form.file}}<br/>
+			<input type="submit" value="Submit"/>
+		</form>
+	</div>
+	{% endif %}
+
+{% endblock %}

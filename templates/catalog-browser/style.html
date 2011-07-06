@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load catalog_extras %}
+
+{% block title %}Volcom Online Catalog{% endblock %}
+
+{% block head_css_includes %}
+<link href="{{AWS_S3_DOMAIN}}/media/stylesheets/jqzoom.css" rel="stylesheet">
+{% endblock %}	
+
+{% block js_includes %}
+<script src="{{AWS_S3_DOMAIN}}/media/js/jquery.jqzoom1.0.1.js"></script>
+<script>
+
+var img_path = "http://images-user-opensocial.googleusercontent.com/gadgets/proxy?url={{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_";
+
+var product_images = [
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'F.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'F1.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'FD.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'D.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'D1.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'D2.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'B.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'B1.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'BD.jpg','path': img_path},
+	{'res': 'low','img_width': 36,'img_height': 36,'angle': 'PACK.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'F.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'F1.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'FD.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'D.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'D1.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'D2.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'B.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'B1.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'BD.jpg','path': img_path},
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': 'PACK.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'F.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'F1.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'FD.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'D.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'D1.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'D2.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'B.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'B1.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'BD.jpg','path': img_path},
+	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': 'PACK.jpg','path': img_path},
+];
+
+function fetch_product_images() {
+	
+	var len=product_images.length;
+	for(var i=0; i<len; i++) {
+		var cur_img = product_images[i];
+		cur_img.final_path = img_path + cur_img.angle + "&refresh=2592000&container=pos&resize_h=" + 	cur_img.img_height+"&resize_w="+cur_img.img_width;
+		cur_img.img_element = new Image();
+		cur_img.img_element.src = cur_img.final_path;
+		cur_img.img_element.img_key = i;
+		
+		if( cur_img.res == 'low' ) {
+			cur_img.img_element.onload=function(){
+				var li_element = $("<li>");
+				$(li_element).append( this );
+				$('#cat-product-swatch-list').append(li_element);
+				
+				$(li_element).click(function() {
+					var img_key = $(this).children('img').attr('img_key');
+					
+					var len=product_images.length;
+					for(var i=0; i<len; i++) {
+						if( product_images[img_key].angle == product_images[i].angle && product_images[i].res == 'med' ) {
+							$('#featured_image').attr('src', product_images[i].final_path);
+						}
+						
+						if( product_images[img_key].angle == product_images[i].angle && product_images[i].res == 'high' ) {
+							$('#zoom-image').attr('href', product_images[i].final_path);
+						}
+					}
+					return false;
+				});
+			}
+		}
+	}
+}
+
+$(document).ready(function() {
+	fetch_product_images();
+	
+	// inititate catalog zoom
+	var zoomOptions = {
+			zoomWidth: 270,
+			zoomHeight: 250,
+			xOffset: 30,
+			yOffset: -11,
+			position: "right",
+			title: false
+	};
+	$(".cat-zoom").jqzoom(zoomOptions);
+});
+
+</script>
+
+{% endblock %}
+
+{% block content %}	
+{% include "snippets/breadcrumbs.html" %}
+<div id="cat-nav"> 
+<div class="cat-sec-title"><h3>{{ line.name }}</h3></div>
+	<ul class="cat-list">
+		<li class="cat-list-title">Categories</li>
+	{% for category in line.categories.all %}
+		{% if category.name == selected_category %}
+			<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{category.name|replacespaces:"_"|urlencode}}">>>{{ category.name }}</a></li>
+		{% else %}
+			<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{category.name|replacespaces:"_"|urlencode}}">{{ category.name }}</a></li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+</div>
+
+ <div id="cat-content"> 
+	<div class="cat-sec-title"><h3>{{style.description}}</h3></div>	
+	<!-- product image -->
+	<div class="cat-product-image-wrap">
+		<div class="cat-product-image">
+				<!--
+				<a class="cat-zoom" id="zoom-image" href="{{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg">
+				<img id="featured_image" src="{{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg">
+				</a>
+				-->
+				<a class="cat-zoom" id="zoom-image" href="http://images-user-opensocial.googleusercontent.com/gadgets/proxy?url={{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg&container=pos&resize_h=1000&resize_w=1000&refresh=2592000">
+				<img id="featured_image" src="http://images-user-opensocial.googleusercontent.com/gadgets/proxy?url={{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg&container=pos&resize_h=375&resize_w=408&refresh=2592000">
+				</a>
+		</div>
+		<ul id="cat-product-swatch-list"></ul>
+	</div>
+	<!-- product description -->
+	<div class="cat-product-description">
+  	<p class="cat-product-title">Available</p>
+		<p>{{ style.avail|date:"F Y" }}</p>
+     
+   	{% if style.details %}
+			<p class="cat-product-title">Description</p>
+			<p>{{style.details}}</p>
+		{% endif %}
+     
+		<p class="cat-product-title">Content</p>
+		<p>{{style.contentDesc}}</p>
+            
+		<p class="cat-product-title">Colors</p>
+		<ul class="cat-list-color">
+			{% with style.product_set.all as styles %}
+			{% for product in styles %}
+				<li>
+					<a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{selected_category|replacespaces:"_"|urlencode}}/{{style.number}}/{{product.colorCode}}">
+						<img src="http://images-user-opensocial.googleusercontent.com/gadgets/proxy?url={{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg&refresh=2592000&container=pos&resize_h=36&resize_w=36">
+						{{ product.colorDesc }}
+					</a>
+				</li>
+				{% if not forloop.last %}
+				{% endif %}
+			{% endfor %}
+			{% endwith %}
+		</ul>
+		
+		<div class="cat-product-nav">
+			<ul class="cat-product-nav-btn">
+				{% if previdpage %}
+					<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{style.category.name|replacespaces:"_"|urlencode}}/{{ previdpage }}">&larr; Previous Product</a></li>
+				{% endif %}
+
+				{% if nextidpage %}
+					<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{style.category.name|replacespaces:"_"|urlencode}}/{{ nextidpage }}">Next Product &rarr;</a></li>
+				{% endif %}
+			</ul>
+		</div>  
+	</div>
+	<!-- end product image -->
+ </div>
+{% endblock %}
+

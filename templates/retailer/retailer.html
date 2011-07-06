@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }}{% trans 'Volcom Rep/Retailer Resource Center' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Volcom Rep/Retailer Resource Center' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block content %}
+<a href="{% url apps.catalog.views.index %}">CATALOG BROWSER</a> <br></br>
+----------------------------------------<br></br>
+<a href="{% url apps.retailer.views.seasonal %}">SEASONAL SUPPORT IMAGERY</a> <br></br>
+<a href="{% url apps.retailer.views.document %}">DOCUMENTS</a> <br></br>
+<a href="{% url apps.retailer.views.fixture %}">CLOTHING FIXTURES</a> <br></br>
+{% endblock %}

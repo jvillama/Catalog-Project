@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }}{% trans 'Volcom Rep/Retailer Resource Center' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Volcom Rep/Retailer Resource Center' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+{% block content %}
+<!-- retail content -->
+<div id="retailer-content">
+    <!-- retail section title -->
+    <div id="retailer-sec-title">
+        <h2>Supplements</h2>
+        <p>Click the title to download the supplement. Once you click the title, a download window will appear and ask you where you want to save the file on your computer.</p>
+    </div>
+    <!-- end retail section title -->
+    <ul id="retailer-doc-list">
+        <li>
+            <div class="doc-name doc-title">Supplement File</div>
+        </li>
+        
+        {% for sup in sups %}
+        <li>
+            <div class="doc-name">{{sup.s3file}}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<!-- end retail content -->
+{% endblock %}

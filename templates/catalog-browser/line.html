@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load catalog_extras %}
+
+{% block title %}Volcom Online Catalog{% endblock %}
+
+{% block content %}
+{% include "snippets/breadcrumbs.html" %}
+<div id="cat-nav"> 
+<div class="cat-sec-title"><h3>{{ line.name }}</h3></div>
+	<ul class="cat-list">
+		<li class="cat-list-title">Categories</li>
+{% for category in line.categories.all %}
+	{% if category.name == selected_category %}
+		<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{category.name|replacespaces:"_"|urlencode}}">{{ category.name }}</a></li>
+	{% else %}
+		<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{category.name|replacespaces:"_"|urlencode}}">{{ category.name }}</a></li>
+	{% endif %}
+{% endfor %}
+	</ul>	
+</div>
+
+ <div id="cat-content"> 
+{% if selected_category %}
+	<div class="cat-sec-title"><h3>{{selected_category}}</h3></div>
+{% else %}
+	<div class="cat-sec-title"><h3>Please Select a Category:</h3></div>
+{% endif %}
+
+{% for style in styles %}
+	<div class="cat-product-gal-thumb">
+		<div class="cat-product-thumb">
+			<a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{style.category.name|replacespaces:"_"|urlencode}}/{{style.number}}">
+				<img src="http://images-user-opensocial.googleusercontent.com/gadgets/proxy?url={{aws_s3_domain}}/{{style.number}}_{{style.product_set.all.0.colorCode|upper}}_F.jpg&container=pos&rewriteMime=image/*&resize_h=234&resize_w=240&no_expand=1&refresh=2592000">
+				<!--
+				<img src="{{ link.0 }}">
+				-->
+				<!--
+				<img class="cat-product-gal-thumb" src="{{ link.0 }}">
+				-->
+			</a>
+		</div>
+		<div class="cat-product-gal-name"><p><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{style.category|replacespaces:"_"|urlencode}}/{{style.number}}">
+			{{ style.description }}
+			</a></p>
+		</div>
+	</div>
+{% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,12 @@
+
+{% load catalog_extras %}
+<div id="cat-breadcrumb">
+	<div class="cat-breadcrumb-slot"><a href="{{ home_path }}browser"><img src="{{AWS_S3_DOMAIN}}/media/images/icon-catalog-home.png"></a></div>
+	<ul id="cat-breadcrumb-list" class="left">
+		{% for breadcrumb in breadcrumbs %}
+			<li><a href="{{ breadcrumb.url }}">{{ breadcrumb.name|replaceunderscores:" " }}</a></li>
+			{% if not forloop.last %}
+			{% endif %}
+		{% endfor %}
+	</ul>
+</div>

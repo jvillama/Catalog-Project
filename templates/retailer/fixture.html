@@ -1,0 +1,29 @@
+{% extends "retailer.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Fixtures' %}{% endblock %}
+
+{% block content %}
+<!-- retail content -->
+<div id="retailer-content">
+    <!-- retail section title -->
+    <div id="retailer-sec-title">
+        <h2>Fixtures</h2>
+        <p>Please note that detailed specs are available from your REP, and fixture finishes are bronze/black for men's and for Jr's fixtures.</p>
+    </div>
+    <!-- end retail section title -->
+    
+    {% for fixture in fixtures %}
+    <div class="retailer-imagery-wrapper">
+        <a href="{{fixture.url}}"><img class="retailer-imagery-thumb" src="{{fixture.url}}" alt="{{fixture.name}}"/></a>
+        
+        <div class="retailer-imagery-details">
+            <p class="imagery-title">{{fixture.name}}</p>
+            <p><b>Description:</b> {{fixture.description}}</p>
+            <p class="imagery-dl"><a href="{{fixture.url}}">download {{fixture.imageFile}}</a></p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- end retail content -->
+{% endblock %}

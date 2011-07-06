@@ -1,0 +1,34 @@
+{% extends "retailer.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Documents' %}{% endblock %}
+
+{% block content %}
+<!-- retail content -->
+<div id="retailer-content">
+    <!-- retail section title -->
+    <div id="retailer-sec-title">
+        <h2>Documents</h2>
+        <p>Click the title to download the document. Once you click the title, a download window will appear and ask you where you want to save the file on your computer.</p>
+    </div>
+    <!-- end retail section title -->
+    <ul id="retailer-doc-list">
+        <li>
+        	<div class="doc-name doc-title">Title</div>
+            <div class="doc-name doc-title">Download</div>
+            <div class="doc-contact doc-title">Contact</div>
+            <div class="doc-date doc-title">Last Update</div>
+        </li>
+        
+        {% for doc in docs %}
+    	<li>
+        	<div class="doc-name"><a href="{{doc.s3file.url}}">{{doc.s3file.name}}</a></div>
+            <div class="doc-name"><a href="{{doc.s3file.url}}">{{doc.s3file.file}}</a></div>
+            <div class="doc-contact">{{doc.s3file.contact_name}} - <a href="#">{{doc.s3file.contact_email}}</a></div>
+            <div class="doc-date">{{doc.s3file.last_modified}}</div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<!-- end retail content -->
+{% endblock %}

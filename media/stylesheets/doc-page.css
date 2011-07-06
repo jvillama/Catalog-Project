@@ -1,0 +1,167 @@
+body {
+	background: #eee;
+}
+
+body, p, a, li, ul, ol, h1 {
+	font-family:Palatino Linotype, Palatino, Times New Roman;
+	margin:0px;
+	padding:0px;
+}
+
+.container {
+	margin: 20px;
+}
+
+
+.header {
+	clear: both;
+	font-size:9pt;
+	background:#888;
+	padding:1px 6px;
+	text-align:right;
+	font-family:Helvetica;
+	color:ccc;
+}
+.header-link { 
+	font-size:9pt;
+	font-family:Helvetica;
+	text-decoration:none;
+	margin-right:1em; 
+}
+.header-link:link { color:#ccc; }
+.header-link:visited { color:#ccc; }
+.header-link:hover { color:#ddd; }
+.header-link:active { color:#ccc; }
+
+
+
+.left-bar {
+	background: #444;
+	width:180px;
+	padding:15px 5px;
+	float:left;
+}
+.nav-list {
+	margin:10px;
+	padding:0px;
+	list-style-type: none;
+}
+.nav-item {
+	margin:3px 10px;
+	padding:0px;
+	font-size:10pt;
+}
+.nav-titleitem {
+	margin:5px 0px 2px 0px;
+	padding:0px;
+	font-size:12pt;
+	color:#ccc;
+}
+
+.nav-link {text-decoration:none;}    
+.nav-link:link {color:#aaa;}    
+.nav-link:visited {color:#aaa;}  
+.nav-link:hover {color:#fff;}
+.nav-link:active {color:#fff;} 
+
+.nav-link-current {text-decoration:none;}    
+.nav-link-current:link {color:#fff; font-weight:bold;}  
+.nav-link-current:visited {color:#fff; font-weight:bold;}  
+.nav-link-current:hover {color:#fff; font-weight:bold;}  
+.nav-link-current:active {color:#fff; font-weight:bold;}  
+
+
+
+
+
+
+.content {
+	line-height: 1.25em;
+	margin: 15px 0px 0px 210px;
+	font-size:12pt;
+}
+
+
+.content p {
+	text-indent: 1.5em;
+}
+
+.title { 
+	line-height: 1 em;
+	font-size:24pt;
+	margin-top:1em;
+	margin-bottom:0.5em;
+}
+.subtitle {
+	line-height: 1 em;
+	font-size:18pt;
+	margin-bottom:0.5em;
+	margin-top:2em;
+}
+
+
+.ink-text {
+	margin: 15px 2em;
+	padding: 1em;
+	background: #fff;
+	white-space: pre-wrap;
+	line-height:1.15em;
+	border: 1px solid #aaa;
+}
+.ink-text p {
+	text-indent:0px;
+}
+
+.ink-output {
+	margin: 15px 2em;
+	padding:1em 2em;
+	background: #fff;
+	white-space: pre-wrap;
+	line-height:1.4em;
+	border: 1px solid #aaa;
+}
+.ink-output p {
+	text-indent:2em;
+}
+
+
+.text p {
+	margin-top:15px;
+}
+
+.text a:link {color:#777;}    
+.text a:visited {color:#777;}  
+.text a:hover {color:#777;}
+.text a:active {color:#777;} 
+
+.text ul {
+	margin:0px 15px 0px 2em;
+	padding:0px;
+}
+.text li {
+	margin:5px 0px 0px 1em;
+	padding:0px;
+}
+
+
+.broken-link {
+	color:red; 
+	text-decoration: underline;
+}
+
+
+.todo-list {
+	list-style: none;
+	margin-left:0.5em;
+}
+.todo-sublist {
+	list-style: disc;
+	margin-left:2em;
+}
+.todo-heading {
+	margin-top:1em;
+	margin-left:1em;
+}
+.todo-item {
+	margin-left:1em;
+}

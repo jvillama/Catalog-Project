@@ -1,0 +1,318 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+html {
+	background: #fff;
+}
+
+body {
+	
+}
+
+
+/*  RETAILER  -  WRAPPERS  */
+/*  ----------------------------------------------------------------  */
+#wrapper {
+	width: 950px;
+	background: #fff;
+	margin: 0 auto 50px auto;
+	padding-bottom: 50px;
+}
+
+#retailer-content {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+/*  RETAILER  -  HEADER  */
+/*  ----------------------------------------------------------------  */
+header#retailer {
+	width: 960px;
+	height: 90px;
+	background: #000;
+	margin: 20px auto 50px auto;
+}
+
+#retailer-logo {
+	width: 960px;
+	height: 60px;
+	background: url('../images/retailer-header.jpg') top left no-repeat;
+	clear:both;
+}
+
+#retailer-nav {
+	width: 940px;
+	height: 30px;
+	padding: 0 10px;
+	background: #000;
+}
+
+#retailer-nav-list {
+}
+
+#retailer-nav-list li {
+	display: -moz-inline-stack;  /* IE FIX */
+	display: inline-block;
+	zoom: 1;  /* IE FIX */
+	*display: inline;  /* IE FIX */
+	line-height: 30px;
+	text-transform: uppercase;
+	margin-right: 20px;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: #fff;
+}
+
+#retailer-nav-list li a {
+	color: #fff;
+}
+
+#retailer-nav-list li a:hover {
+	color: #999;
+}
+
+#retailer-nav-list li.right {
+	float: right;
+	margin-right: 0;
+}
+
+/*  RETAILER  -  HEADER - USER  */
+/*  ----------------------------------------------------------------  */
+#user-header {
+	background: #FFF;
+	float:right;
+	height: 5px;
+	width:960px;
+	padding-left: 10px;
+}
+
+/*  RETAILER  -  FOOTER  */
+/*  ----------------------------------------------------------------  */
+footer#retailer {
+	clear: both;
+	width: 960px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+
+/*  RETAILER  -  SECTION TITLES  */
+/*  ----------------------------------------------------------------  */
+#retailer-sec-title {
+	width: 960px;
+	margin-bottom: 50px;
+}
+
+#retailer-sec-title h2 {
+	font-size: 1.7em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+}
+
+#retailer-sec-title p {
+	font-size: 1em;
+}
+
+
+/*  RETAILER  -  SUPPLEMENTS  */
+/*  ----------------------------------------------------------------  */
+.retailer-supp-wrapper {
+	width: 450px;
+	height: 300px;
+	float: left;
+	margin: 0 30px 50px 0;
+	padding: 0 0 50px 0;
+	border-bottom: 1px dotted #999;
+}
+
+.supp-cover {
+	width: 230px;
+	height: 300px;
+	background: #333;
+	float: left;
+}
+
+.supp-details {
+	width: 195px;
+	padding: 5px 10px;
+	float: right;
+}
+
+.supp-details h3 {
+	font-size: 1.1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+
+.supp-details p {
+	font-size: 1em;
+	line-height: 1.3em;
+}
+
+.supp-details p.cat {
+	text-transform: uppercase;
+	border-bottom: 1px dotted #999;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+
+/*  RETAILER  -  IMAGERY  */
+/*  ----------------------------------------------------------------  */
+.retailer-imagery-wrapper {
+	width: 222px;
+	float: left;
+	margin: 0 24px 10px 0;
+}
+
+.retailer-imagery-last {
+	margin: 0 0 10px 0;
+}
+
+.retailer-imagery-thumb {
+	width: 222px;	/*  max width of thumbnail  */
+	height: 170px;	/*  max height of thumbnail  */
+	background: #000;
+}
+
+.retailer-imagery-details {
+	width: 222px;
+	height: 100px;
+	margin-top: 5px;
+}
+
+.retailer-imagery-details p {
+	line-height: 1.4em;
+}
+
+p.imagery-title {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+p.imagery-dl {
+	font-style: italic;
+}
+
+a.catalog-dl {
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+/*  RETAILER  -  DOCUMENTS  */
+/*  ----------------------------------------------------------------  */
+#retailer-doc-list {
+	
+}
+
+#retailer-doc-list li {
+	width: 960px;
+	height: 25px;
+	border-bottom: 1px dotted #999;
+}
+
+.doc-title {
+	font-size: 1.1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.doc-name {
+	width: 260px;
+	float: left;
+	line-height: 25px;
+}
+
+.doc-contact {
+	width: 260px;
+	float: left;
+	line-height: 25px;
+}
+
+.doc-date {
+	width: 160px;
+	float: left;
+	line-height: 25px;
+}
+
+
+
+
+
+/*  RETAILER  -  FONT STYLES  */
+/*  ----------------------------------------------------------------  */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333;
+}
+
+a, a:link, a:visited, a:active {
+	color: #990000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000;
+}
+	
+

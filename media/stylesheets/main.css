@@ -1,0 +1,836 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+html {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/body-bg.jpg') top center no-repeat;
+	background-color: #000;
+}
+
+body {
+	
+}
+
+
+
+
+
+/*  HEADER  */
+/*  ------------------------------------------------------------------  */
+header {
+	width: 950px;
+	margin: 0 auto;
+}
+
+#branding {
+	position: relative;
+	width: 950px;
+	height: 160px;
+}
+.home #branding {
+	height: 155px;
+}
+#branding h1 {
+	position: absolute;
+	top: 20px;
+	left: -5px;
+	width: 260px;
+	height: 124px;
+	text-indent: -9999px;
+}
+#branding h1 a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#socialMedia {
+	position: absolute;
+	top: 50px;
+	right: 0;
+	height: 16px;
+}
+#socialMedia li {
+	float: left;
+	margin-left: 3px;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+#socialMedia li a {
+	display: block;
+	width: 16px;
+	height: 16px;
+}
+li#facebook a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/social-media.png') no-repeat;
+}
+li#twitter a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/social-media.png') no-repeat -16px 0;
+}
+li#youTube a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/social-media.png') no-repeat -32px 0;
+}
+li#rss a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/social-media.png') no-repeat -48px 0;
+}
+#searchform {
+	position: absolute;
+	top: 15px;
+	right: 0;
+	width: 280px;
+	height: 30px;
+	overflow: hidden;
+}
+.screen-reader-text {
+	position: absolute;
+	top: 10px;
+	left: 100px;
+	color: #000;
+}
+#s {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 4px 5px;
+	width: 270px;
+	height: 22px;
+	color: rgb(102,102,102);
+	font-size: 11px;
+	z-index: 5;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/search-bg.png') no-repeat;
+	border: none;
+}
+#searchsubmit {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	width: 29px;
+	height: 28px;
+	-moz-opacity: 0;
+ filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 6;
+	text-indent: -9999px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/icon-search.png') no-repeat;
+	border: none;
+}
+/* navigation */
+
+#primaryNav {
+	position: absolute;
+	top: 86px;
+	right: 0;
+	width: 630px;
+}
+#primaryNav li {
+	position: absolute;
+	top: 0;
+	height: 32px;
+	color: #fff;
+	text-indent: -9999px;
+}
+#primaryNav a {
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: #fff;
+}
+#navClothing {
+	left: 0;
+	width: 91px;
+}
+#navClothing a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat;
+}
+#navClothing a:hover, .page-id-2 #navClothing a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat 0 -32px;
+}
+#navHappenings {
+	left: 111px;
+	width: 117px;
+}
+#navHappenings a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -111px 0;
+}
+#navHappenings a:hover, .page-template-happenings-page-php #navHappenings a, .page-template-surf-page-php #navHappenings a, .page-template-skate-page-php #navHappenings a, .page-template-snow-page-php #navHappenings a, .page-template-mx-page-php #navHappenings a, .single-format-standard #navHappenings a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -111px -32px;
+}
+#navTeam {
+	left: 248px;
+	width: 54px;
+}
+#navTeam a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -248px 0;
+}
+#navTeam a:hover, .page-id-17 #navTeam a, .page-template-team-profile-page-php #navTeam a, .parent-pageid-17 #navTeam a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -248px -32px;
+}
+#navVideos {
+	left: 322px;
+	width: 70px;
+}
+#navVideos a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -322px 0;
+}
+#navVideos a:hover {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -322px -32px;
+}
+#navArt {
+	left: 414px;
+	width: 39px;
+}
+#navArt a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -414px 0;
+}
+#navArt a:hover, .page-template-artists-page-php #navArt a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -414px -32px;
+}
+#navMusic {
+	left: 474px;
+	width: 64px;
+}
+#navMusic a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -474px 0;
+}
+#navMusic a:hover {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -474px -32px;
+}
+#navEvents {
+	left: 558px;
+	width: 72px;
+}
+#navEvents a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -558px 0;
+}
+#navEvents a:hover, .page-id-16 #navEvents a {
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/primary-nav.png') no-repeat -558px -32px;
+}
+#tabs {
+	border-top: 1px dotted #333;
+}
+.nav-tabs {
+	position: absolute;
+	top: -19px;
+	right: 0;
+}
+.nav-tabs li, .videos-tabs li {
+	float: left;
+	margin-left: 2px;
+	display: inline;
+	font-size: 11px;
+}
+.nav-tabs li a, .videos-tabs li a {
+	padding: 2px 4px;
+	color: #fff;
+	background: none;
+}
+.nav-tabs li a:hover, .videos-tabs li a:hover {
+	background: #555;
+}
+.nav-tabs li.selected a, .nav-tabs li.selected a:hover, .videos-tabs li.selected a, .videos-tabs li.selected a:hover {
+	padding: 2px 4px;
+	color: #fff;
+	background: #ff0000;
+}
+#contentNav {
+	position: absolute;
+	top: 19px;
+	right: 10px;
+}
+#nextNav {
+	position: absolute;
+	top: 22px;
+	right: 10px;
+}
+.next-tabs li {
+	float: left;
+	margin-left: 2px;
+	display: inline;
+}
+.next-tabs li a {
+	padding: 2px 4px;
+	color: #fff;
+	background: #333;
+}
+.next-tabs li a:hover {
+	background: #555;
+}
+.post-tabs {
+	position: absolute;
+	top: -37px;
+	right: 0;
+	font-size: 11px;
+	list-style: none;
+	zoom: 1;
+}
+.post-tabs li {
+	position: relative;
+	float: left;
+	margin-left: 2px;
+	display: inline;
+	list-style:none;
+}
+.post-tabs li a {
+	float: left;
+	padding: 2px 4px;
+	color: #fff;
+	text-decoration: none;
+}
+.post-tabs li a:hover {
+	background: #555;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+	color: #fff;
+	cursor: text;
+	background:#ff0000;
+}
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+	cursor: pointer;
+}
+.ui-tabs .ui-tabs-hide {
+	display: none;
+}
+.wpts_spacer {
+	margin: 5px 0 0 0;
+}
+.js .wordpress-post-tabs .wpts-hide {
+	display: none;
+}
+a.wpts-mover {
+	background: #EFEFEF;
+	padding: 3px 6px;
+	color: #5E5E5E;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+
+
+
+
+
+/*  FOOTER  */
+/*  ----------------------------------------------------------------  */
+#footer {
+	position: relative;
+	clear: both;
+	/*
+	min-height: 1000px;
+	*/
+	margin: 35px auto 0 auto;
+	padding: 0 10px;
+	width: 930px;
+	height: 260px;
+}
+
+#footer h4 {
+	color: #fff;
+	font-size: 12px;
+}
+#footer p {
+	color: rgb(102,102,102);
+	font-size: 11px;
+}
+#joinForm {
+	position: absolute;
+	top: 30px;
+	left: 10px;
+	width: 330px;
+	height: 25px;
+}
+#joinInput {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 4px 5px;
+	width: 202px;
+	height: 17px;
+	color: #666;
+	background-image: url('http://vlcm-catalog.s3.amazonaws.com/media/images/join-bg.png');
+	border: 0 none;
+}
+#joinButton {
+	position: absolute;
+	top: 0;
+	left: 217px;
+	width: 68px;
+	height: 25px;
+	color: #fff;
+	font-size: 12px;
+	text-transform: uppercase;
+	background: #ff0000;
+	border: none;
+}
+#footerIcons {
+	position: absolute;
+	/*
+	min-height: 1000px;
+	*/
+	top: 60px;
+	left: 10px;
+	width: 391px;
+	height: 72px;
+	text-indent: -9999px;
+}
+#footerIcons a {
+	/*
+	min-height: 1000px;
+	*/
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+#footerIcons li {
+	/*
+	min-height: 1000px;
+	*/
+	position: absolute;
+	top: 0;
+	height: 72px;
+}
+#vbj {
+	left: 0;
+	width: 73px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/footer-icons.png') no-repeat;
+}
+#vab {
+	left: 74px;
+	width: 117px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/footer-icons.png') no-repeat -74px 0;
+}
+#swim {
+	left: 190px;
+	width: 83px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/footer-icons.png') no-repeat -190px 0;
+}
+#vls {
+	left: 273px;
+	width: 63px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/footer-icons.png') no-repeat -273px 0;
+}
+#va {
+	left: 335px;
+	width: 56px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/footer-icons.png') no-repeat -335px 0;
+}
+.footerLinks {
+	position: absolute;
+	top: 60px;
+	width: 130px;
+	color: #666;
+	font-size: 12px;
+}
+.footerLinks a {
+	padding: 2px 4px;
+	color: #666;
+}
+.footerLinks a:hover {
+	color: #fff;
+	background: #ff0000;
+}
+.footerLinks li {
+	margin-bottom: 4px;
+}
+#footer .col-1 {
+	right: 260px;
+}
+#footer .col-2 {
+	right: 130px;
+}
+#footer .col-3 {
+	right: 0;
+}
+#footer #copyright {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	padding-left: 110px;
+	height: 64px;
+	line-height: 64px;
+	color: #fff;
+	font-size: 12px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/footer-volcom.png') no-repeat;
+}
+
+
+
+
+
+
+
+/*  WRAPPERS  */
+/*  ----------------------------------------------------------------  */
+#wrapper {
+	width: 950px;
+	background: #fff;
+	margin: 0 auto 50px auto;
+	padding-bottom: 50px;
+}
+
+#cat-breadcrumb {
+	width: 950px;
+	height: 25px;
+	background: #ccc;
+	margin-bottom: 10px;
+}
+
+#cat-nav {
+	width: 170px;
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+#cat-content {
+	width: 730px;
+	float: right;
+	margin: 0 10px 0 0;
+}
+
+
+
+
+
+/*  CATALOG  :  TITLES  */
+/*  -----------------------------------------------------------------  */
+.cat-sec-title {
+	margin-bottom: 20px;	
+	padding-bottom: 1px;
+	border-bottom: 1px dotted #333;
+}
+
+.cat-sec-title h3 {
+	font-size: 2.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000;
+}
+
+
+
+
+/*  CATALOG  :  NAV  */
+/*  ----------------------------------------------------------------  */
+ul.cat-list {
+	margin-bottom: 20px;
+}
+
+ul.cat-list li.cat-list-title {
+	color: #000;	
+	border-bottom: 1px dotted #333;
+	padding-bottom: 1px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+ul.cat-list li {
+	margin: 0 0 3px 0;
+}
+
+ul.cat-list li a {
+	color: #555;
+	text-decoration: none;	
+}
+
+ul.cat-list li a:hover {
+	color: #000;
+}
+
+.cat-list-color li a {
+	text-decoration: none;
+	font-size: 0.9em;
+	line-height: 1.3em;
+	color: #000;
+}
+
+.cat-list-color li a:hover {
+	color: #999;
+}
+
+
+
+
+/*  CATALOG  :  PRODUCT THUMBNAILS IN FULL GALLERY DISPLAY  */
+/*  ----------------------------------------------------------------  */
+.cat-product-gal-thumb {
+	position: relative;
+	width: 234px;
+	height: 240px;
+	background: #222;
+	border: 1px solid #999;
+	margin: 0 11px 11px 0;
+	float: left;
+	overflow: hidden;
+}
+
+.cat-product-gal-thumb:nth-child(3n+1) {
+	margin: 0px 0px 9px 0px;
+}
+
+.cat-product-gal-thumb:hover {
+	border: 1px solid #333;
+}
+
+.last-thumb {
+	margin: 0 0 9px 0;
+}
+
+.cat-product-thumb {
+	position: absolute;
+	top: 0; 
+	left: 0;
+	z-index: 1;
+}
+
+.cat-product-gal-name {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 234px;
+	height: 40px;
+	background: #000;
+}
+
+.cat-product-gal-name p {
+	text-align: center;
+	color: #fff;
+	line-height: 40px;
+}
+
+.cat-product-gal-name a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
+
+
+
+/*  CATALOG  :  BREADCRUMB SYSTEM  */
+/*  ----------------------------------------------------------------  */
+.cat-breadcrumb-slot {
+	margin: 0 3px;
+	float: left;
+}
+
+.slot-break {
+	margin: 0 0 0 0;
+	float: left;
+}
+
+#cat-breadcrumb-list {
+	height: 25px;
+}
+
+#cat-breadcrumb-list li {
+	display: -moz-inline-stack;  /* IE FIX */
+	display: inline-block;
+	zoom: 1;  /* IE FIX */
+	*display: inline;  /* IE FIX */
+	line-height: 25px;
+	padding: 0 5px 0 20px;
+	background: url('http://vlcm-catalog.s3.amazonaws.com/media/images/icon-catalog-break.png') top left no-repeat;
+}
+
+#cat-breadcrumb-list li a {
+	font-size: 0.9em;
+	color: #555;
+	text-decoration: none;
+}
+
+
+
+
+
+
+/*  CATALOG  :  INDIVIDUAL PRODUCT PAGE  */
+/*  ----------------------------------------------------------------  */
+.cat-product-image-wrap {
+	width: 410px;
+	background: #1d1d1d;
+	padding: 10px;
+	float: left;
+}
+
+.cat-product-image {
+	width: 408px;
+	height: 375px;
+	background: #000;
+	border: 1px solid #555;
+}
+
+/*
+.cat-product-swatches {
+	width: 410px;
+	height: 40px;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+*/
+
+ul#cat-product-swatch-list {
+	width: 410px;
+    height: 40px;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+ul#cat-product-swatch-list li {
+	display: -moz-inline-stack;  /* IE FIX */
+	display: inline-block;
+	zoom: 1;  /* IE FIX */
+	*display: inline;  /* IE FIX */
+	width: 36px;
+	height: 36px;
+	background: #000;
+	border: 1px solid #555;
+	padding: 1px;
+	margin-right: 8px;
+}
+
+ul#cat-product-swatch-list li:last-child {
+	margin-right: 0;
+}
+
+ul#cat-product-swatch-list li:hover, ul#cat-product-swatch-list li#currentSwatch {	/* currentSwatch list class */
+	border: 1px solid #fff;
+}
+
+.cat-product-description {
+	width: 260px;
+	float: right;
+	padding: 5px 10px 0 0; 	/* right padding for some space between edge and text */
+}
+
+.cat-product-description p {
+	line-height: 1.3em;
+	margin-bottom: 20px;
+	color: #999;
+	font-size: 0.9em;
+}
+
+p.cat-product-title {
+	font-weight: bold;
+	font-size: 1em;
+	color: #000;
+	margin-bottom: 0;
+}
+
+div.cat-product-nav {
+	padding: 20px 0;		
+}
+
+.clear {
+  clear: both;
+ }
+
+ul.cat-product-nav-btn li {
+	display: -moz-inline-stack;  /* IE FIX */
+	display: inline-block;
+	zoom: 1;  /* IE FIX */
+	*display: inline;  /* IE FIX */
+	padding: 4px 6px;
+	background: #ccc;
+}
+
+ul.cat-product-nav-btn li:hover {
+	background: #000;
+}
+
+ul.cat-product-nav-btn li a {
+	font-size: 0.9em;
+	color: #555;
+	text-decoration: none;
+}
+
+ul.cat-product-nav-btn li:hover a {
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+/*  CATALOG  :  COMMON  */
+/*  ----------------------------------------------------------------  */
+.left {
+	float: left;
+}
+
+
+
+
+
+
+
+/*  FONT STYLES  */
+/*  ----------------------------------------------------------------  */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+}
+	
+

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load catalog_extras %}
+
+{% block title %}Volcom Online Catalog{% endblock %}
+{% block content %}
+{% include "snippets/breadcrumbs.html" %}
+
+<div id="cat-nav"> 
+<div class="cat-sec-title"><h3>Select Season</h3></div>
+{% for division in divisions %}
+	<ul class="cat-list">
+		<li class="cat-list-title"> {{ division.description }} </li>
+		{% for line in division.line_set.all %}
+			{% if not line.is_hidden and user.is_authenticated %}
+				<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}">{{ line.name }}</a></li>
+			{% else %}
+				{%if line.is_public %}
+					<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}">{{ line.name }}</a></li>
+				{% endif %}
+				{% if user.is_authenticated and not line.is_hidden and line.supplements %}
+					<ul class="cat-list-supplement">
+					{% for supplement in line.supplements.all %}
+						<li><a href="{{ supplement.s3file }}" default="_blank">{{ supplement.s3file.name }}</a></li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+			{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+</div>
+ <div id="cat-content"> 
+	<div class="cat-sec-title"><h3>Featured Catalogs</h3></div>
+	{% for featured_line in featured_lines %}
+		{% if not featured_line.line.is_hidden and user.is_authenticated %}
+			{% if featured_line.line.imageLink %}
+			<div class="featuredCatalogCover">
+				<div class="cover">
+					<a href="{{ home_path }}browser/{{featured_line.line.name|replacespaces:"_"|urlencode}}"><img class="cat-product-gal-thumb" src="{{ featured_line.line.imageLink }}"/></a>
+				</div>
+			</div>
+			{% endif %}
+		{% else %}
+			{%if featured_line.line.is_public %}
+				{% if featured_line.line.imageLink %}
+				<div class="featuredCatalogCover">
+					<div class="cover">
+						<a href="{{ home_path }}browser/{{featured_line.line.name|replacespaces:"_"|urlencode}}"><img class="cat-product-gal-thumb" src="{{ featured_line.line.imageLink }}"/></a>
+					</div>
+				</div>
+				{% endif %}
+			{% endif %}
+
+			{% if user.is_authenticated and not featured_line.line.is_hidden and featured_line.line.supplements %}
+<!--
+				<a href="{{aws_s3_domain}}/imagenotavailable.jpg"><img class="cat-product-gal-thumb" src="{{aws_s3_domain}}/imagenotavailable.jpg"></a>
+				<a href="{{aws_s3_domain}}/imagenotavailable.jpg"><img class="cat-product-gal-thumb" src="{{aws_s3_domain}}/imagenotavailable.jpg"></a>
+-->
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+ </div>
+{% endblock %}
