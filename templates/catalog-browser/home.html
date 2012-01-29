@@ -5,7 +5,7 @@
 {% block content %}
 {% include "snippets/breadcrumbs.html" %}
 
-<div id="cat-nav"> 
+<div id="cat-nav">
 <div class="cat-sec-title"><h3>Select Season</h3></div>
 {% for division in divisions %}
 	<ul class="cat-list">
@@ -30,7 +30,7 @@
 	</ul>
 {% endfor %}
 </div>
- <div id="cat-content"> 
+ <div id="cat-content">
 	<div class="cat-sec-title"><h3>Featured Catalogs</h3></div>
 	{% for featured_line in featured_lines %}
 		{% if not featured_line.line.is_hidden and user.is_authenticated %}

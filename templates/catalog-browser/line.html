@@ -5,7 +5,7 @@
 
 {% block content %}
 {% include "snippets/breadcrumbs.html" %}
-<div id="cat-nav"> 
+<div id="cat-nav">
 <div class="cat-sec-title"><h3>{{ line.name }}</h3></div>
 	<ul class="cat-list">
 		<li class="cat-list-title">Categories</li>
@@ -16,10 +16,10 @@
 		<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{category.name|replacespaces:"_"|urlencode}}">{{ category.name }}</a></li>
 	{% endif %}
 {% endfor %}
-	</ul>	
+	</ul>
 </div>
 
- <div id="cat-content"> 
+ <div id="cat-content">
 {% if selected_category %}
 	<div class="cat-sec-title"><h3>{{selected_category}}</h3></div>
 {% else %}

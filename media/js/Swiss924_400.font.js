@@ -1,6 +1,6 @@
 /*!
  * The following copyright notice may not be removed under any circumstances.
- * 
+ *
  * Copyright:
  * Copyright 1990-1993 Bitstream Inc.  All rights reserved.
  */

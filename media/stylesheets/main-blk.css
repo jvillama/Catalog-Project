@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -63,7 +63,7 @@ html {
 }
 
 body {
-	
+
 }
 
 
@@ -130,7 +130,7 @@ header {
 /*  CATALOG  :  TITLES  */
 /*  ----------------------------------------------------------------  */
 .cat-sec-title {
-	margin-bottom: 20px;	
+	margin-bottom: 20px;
 	padding-bottom: 1px;
 	border-bottom: 1px dotted #333;
 }
@@ -152,7 +152,7 @@ ul.cat-list {
 }
 
 ul.cat-list li.cat-list-title {
-	color: #fff;	
+	color: #fff;
 	border-bottom: 1px dotted #333;
 	padding-bottom: 1px;
 	margin-bottom: 10px;
@@ -165,7 +165,7 @@ ul.cat-list li {
 
 ul.cat-list li a {
 	color: #ff0000;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 ul.cat-list li a:hover {
@@ -198,7 +198,7 @@ ul.cat-list li a:hover {
 
 .cat-product-thumb {
 	position: absolute;
-	top: 0; 
+	top: 0;
 	left: 0;
 	z-index: 1;
 }
@@ -332,7 +332,7 @@ p.cat-product-title {
 }
 
 div.cat-product-nav {
-	padding: 20px 0;		
+	padding: 20px 0;
 }
 
 ul.cat-product-nav-btn li {
@@ -384,5 +384,5 @@ body {
 	font-size: 12px;
 	color: #fff;
 }
-	
+
 

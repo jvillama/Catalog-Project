@@ -7,7 +7,7 @@
 <!--
 <link href="{{AWS_S3_DOMAIN}}/media/stylesheets/jqzoom.css" rel="stylesheet">
 -->
-{% endblock %}	
+{% endblock %}
 
 {% block js_includes %}
 <!--
@@ -24,14 +24,14 @@ var product_images = [
 	{'res': 'low','img_width': 36,'img_height': 36,'angle': '_B.jpg','path': img_path},
 	{'res': 'med','img_width': 408,'img_height': 375,'angle': '_F.jpg','path': img_path},
 	{'res': 'med','img_width': 408,'img_height': 375,'angle': '_D.jpg','path': img_path},
-	{'res': 'med','img_width': 408,'img_height': 375,'angle': '_B.jpg','path': img_path},	
+	{'res': 'med','img_width': 408,'img_height': 375,'angle': '_B.jpg','path': img_path},
 	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': '_F.jpg','path': img_path},
 	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': '_D.jpg','path': img_path},
 	{'res': 'high','img_width': 1000,'img_height': 1000,'angle': '_B.jpg','path': img_path}
 ];
 
 function fetch_product_images() {
-	
+
 	var len=product_images.length;
 	for(var i=0; i<len; i++) {
 		var cur_img = product_images[i];
@@ -39,26 +39,26 @@ function fetch_product_images() {
 		cur_img.img_element = new Image();
 		cur_img.img_element.src = cur_img.final_path;
 		cur_img.img_element.img_key = i;
-		
+
 		if( cur_img.res == 'low' ) {
 			cur_img.img_element.onload=function(){
 				var li_element = $("<li>");
 				$(li_element).append( this );
 				$('#cat-product-swatch-list').append(li_element);
-				
+
 				$(li_element).click(function() {
 					var img_key = $(this).children('img').attr('img_key');
-					
+
 					var len=product_images.length;
 					for(var i=0; i<len; i++) {
 						if( product_images[img_key].angle == product_images[i].angle && product_images[i].res == 'med' ) {
 							$('#featured_image').attr('src', product_images[i].final_path);
 						}
-						
+
 						if( product_images[img_key].angle == product_images[i].angle && product_images[i].res == 'high' ) {
 							$('#featured_image').attr('src', product_images[i].final_path);
 						}
-						
+
 						if( product_images[img_key].angle == product_images[i].angle && product_images[i].res == 'high' ) {
 							$('#zoom-image').attr('href', product_images[i].final_path);
 						}
@@ -72,7 +72,7 @@ function fetch_product_images() {
 
 $(document).ready(function() {
 	fetch_product_images();
-	
+
 	// inititate catalog zoom
 	var zoomOptions = {
 			zoomWidth: 270,
@@ -89,9 +89,9 @@ $(document).ready(function() {
 
 {% endblock %}
 
-{% block content %}	
+{% block content %}
 {% include "snippets/breadcrumbs.html" %}
-<div id="cat-nav"> 
+<div id="cat-nav">
 <div class="cat-sec-title"><h3>{{ line.name }}</h3></div>
 	<ul class="cat-list">
 		<li class="cat-list-title">Categories</li>
@@ -105,19 +105,19 @@ $(document).ready(function() {
 	</ul>
 </div>
 
- <div id="cat-content"> 
-	<div class="cat-sec-title"><h3>{{style.description}}</h3></div>	
+ <div id="cat-content">
+	<div class="cat-sec-title"><h3>{{style.description}}</h3></div>
 	<!-- product image -->
 	<div class="cat-product-image-wrap">
 		<div class="cat-product-image">
 				<img id="featured_image" class="cat-product-image" src="{{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg">
-				
+
 				<!--
 				<a class="cat-zoom" id="zoom-image" href="http://images-user-opensocial.googleusercontent.com/gadgets/proxy?url={{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg&container=pos&resize_h=1000&resize_w=1000&refresh=2592000"></a>
-				
+
 				<img id="featured_image" src="http://images-user-opensocial.googleusercontent.com/gadgets/proxy?url={{aws_s3_domain}}/{{style.number}}_{{product.colorCode|upper}}_F.jpg&container=pos&resize_h=375&resize_w=408&refresh=2592000">
 				-->
-				
+
 		</div>
 		<ul id="cat-product-swatch-list"></ul>
 	</div>
@@ -125,15 +125,15 @@ $(document).ready(function() {
 	<div class="cat-product-description">
   	<p class="cat-product-title">Available</p>
 		<p>{{ style.avail|date:"F Y" }}</p>
-     
+
    	{% if style.details %}
 			<p class="cat-product-title">Description</p>
 			<p>{{style.details}}</p>
 		{% endif %}
-     
+
 		<p class="cat-product-title">Content</p>
 		<p>{{style.contentDesc}}</p>
-            
+
 		<p class="cat-product-title">Colors</p>
 		<ul class="cat-list-color">
 			{% for product in style.product_set.all %}
@@ -144,7 +144,7 @@ $(document).ready(function() {
 				{% endif %}
 			{% endfor %}
 		</ul>
-		
+
 		<div class="cat-product-nav">
 			<ul class="cat-product-nav-btn">
 				{% if previdpage %}
@@ -155,7 +155,7 @@ $(document).ready(function() {
 					<li><a href="{{ home_path }}browser/{{line.name|replacespaces:"_"|urlencode}}/{{style.category.name|replacespaces:"_"|urlencode}}/{{ nextidpage }}">Next Product &rarr;</a></li>
 				{% endif %}
 			</ul>
-		</div>  
+		</div>
 	</div>
 	<!-- end product image -->
  </div>
