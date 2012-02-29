@@ -35,11 +35,11 @@
 }
 
 .search_result {
-	
+
 	margin-bottom: 8px;
 	height:25px;
 	border-bottom: 1px solid #CCCCCC;
-	
+
 }
 
 .search_result a {
@@ -49,7 +49,7 @@
 }
 
 .search_result p.tags {
-	font-style: italic;	
+	font-style: italic;
 }
 
 #search_form {
@@ -142,32 +142,32 @@ input.search {
 <script src="{{AWS_S3_DOMAIN}}/media/js/jquery.form.js" type="text/javascript"></script>
 <script src="{{AWS_S3_DOMAIN}}/media/js/jquery.simplemodal.1.4.1.min.js" type="text/javascript" ></script>
 
-<script type="text/javascript"> 
+<script type="text/javascript">
 var query = "";
 
 {% if query %}
 query = "{{ query }}";
 {% endif %}
 
-$(document).ready(function() { 
+$(document).ready(function() {
 	$('#search').keyup(function() {
 		send_search_query();
 	});
-	
+
 	$('#policy_document').click(function(){
 		$("#overview_info").modal();
 		return false;
 	});
-	
+
 	$('#testing_document').click(function(){
 		$("#testing_program_info").modal();
 		return false;
 	});
-		
+
 	$('.company_checkbox').click(function() {
 		send_search_query();
 	});
-	
+
 	if( query ) {
 		$('#search').attr('value', query );
 	}
@@ -176,27 +176,27 @@ $(document).ready(function() {
 function send_search_query() {
 	var options = {
 		url: 'search',
-		dataType: 'json', 
-		success: search_result 
-	};	
+		dataType: 'json',
+		success: search_result
+	};
 	$('#loader-img').attr('src', '{{AWS_S3_DOMAIN}}/media/images/ajax-loader.gif').show();
 	$('#search_form').ajaxSubmit( options );
 }
 
-function search_result(data, statusText, xhr, $form) {	
+function search_result(data, statusText, xhr, $form) {
 	$("#file_list").children().remove();
-	
+
 	if( $(data).size() > 0 ) {
 		$(data).each( function(i,item ) {
 			var file_link = $('<a/>');
-			var company 
-			
+			var company
+
 			if( item.fields.company == 1 ) {
 				company = "volcom";
 			} else {
 				company = "electric";
 			}
-			
+
 			file_link.attr( 'href', 'http://volcom-coc.s3.amazonaws.com/' + company + '/' + item.fields.file_name );
 
 			item_string = "" + item.fields.uid + " - " + item.fields.description;
@@ -216,7 +216,7 @@ function search_result(data, statusText, xhr, $form) {
 	$('#loader-img').hide();
 }
 
-function new_result(data, statusText, xhr, $form) {	
+function new_result(data, statusText, xhr, $form) {
 	if( data.result ) {
 		window.location = data.link;
 	}
@@ -228,7 +228,7 @@ function new_result(data, statusText, xhr, $form) {
 </script>
 {% endblock %}
 
-{% block content %}	
+{% block content %}
 <header>
 	<hgroup>
 <!-- retail content -->
@@ -237,17 +237,17 @@ function new_result(data, statusText, xhr, $form) {
 		<div id="retailer-sec-title" class="">
 		<h2>General Certificate of Conformity</h2>
 		<br>
-		<a href="#" id="policy_document">Policy</a> / <a href="#" id="testing_document">Testing Program</a> / 
+		<a href="#" id="policy_document">Policy</a> / <a href="#" id="testing_document">Testing Program</a> /
 		<!--
-		<a href="http://volcom-coc.s3.amazonaws.com/Appendix_A_Flammability_requirements.pdf">Flammability Document</a> / 
+		<a href="http://volcom-coc.s3.amazonaws.com/Appendix_A_Flammability_requirements.pdf">Flammability Document</a> /
 		<a href="http://volcom-coc.s3.amazonaws.com/Appendix_B_Safety_and_Restricted_substances_requirements.pdf">Safety Document</a>
 		-->
-		<a href="http://volcom-coc.s3.amazonaws.com/2011-02-23 FLAMMABILITY TESTING.DOC">Flammability Document</a> / 
+		<a href="http://volcom-coc.s3.amazonaws.com/2011-02-23 FLAMMABILITY TESTING.DOC">Flammability Document</a> /
 		<a href="http://volcom-coc.s3.amazonaws.com/Appendix 08-1A - Volcom Apparel Testing Manual, 2-28-11.pdf">Safety Document</a>
 		</div>
 		<!-- end retail section title -->
 	</hgroup>
-	
+
 <div id="container">
 	<div id="search_column">
 		<form id="search_form" name="f">
@@ -280,7 +280,7 @@ function new_result(data, statusText, xhr, $form) {
 		{% endfor %}
 		</ul>
 	</div>
-	<ul id="coc-results">	
+	<ul id="coc-results">
 	</ul>
 </div>
 <!-- end retail content -->
@@ -292,20 +292,20 @@ function new_result(data, statusText, xhr, $form) {
 	{{ debug.file_count }}
 </div>
 
-<p id="overview_info">Volcom and Electric Visual (Volcom Inc.) are dedicated to making quality products that adhere to global safety standards without compromising performance. 
-	We ensure that our products are safe through a series of testing and tracking developed by the Volcom Inc. team in 2010. This testing plan was written in 
-	response to the U.S. Consumer Product Safety Commission's (CPSC) Reasonable Testing Program. Products are selected for testing based on material composition 
-	and the age of the intended user. Third Party CPSC Accredited Laboratories are used to perform regulatory tests so no bias is present. The test results are 
-	then reviewed by an in-house team at Volcom Inc. and used to determine if a tested item is compliant. From these results we know whether to give a product the 
+<p id="overview_info">Volcom and Electric Visual (Volcom Inc.) are dedicated to making quality products that adhere to global safety standards without compromising performance.
+	We ensure that our products are safe through a series of testing and tracking developed by the Volcom Inc. team in 2010. This testing plan was written in
+	response to the U.S. Consumer Product Safety Commission's (CPSC) Reasonable Testing Program. Products are selected for testing based on material composition
+	and the age of the intended user. Third Party CPSC Accredited Laboratories are used to perform regulatory tests so no bias is present. The test results are
+	then reviewed by an in-house team at Volcom Inc. and used to determine if a tested item is compliant. From these results we know whether to give a product the
 	green light or to take a step back to reformulate, rework, resource, and redesign until we are completely satisfied with the results. <br /><br />
-	This website is intended to give our retailers, customers, and anyone who is interested access to our Certificates of Compliance.  If you can't find what 
+	This website is intended to give our retailers, customers, and anyone who is interested access to our Certificates of Compliance.  If you can't find what
 	you are looking for, send an email to <a href="mailto:COC@volcom.com">COC@volcom.com</a> and someone will be happy to help you.<br /><br />
 </p>
 
 <p id="testing_program_info">Volcom Inc. Testing Program: Standards and Procedures
 Drafted November 9, 2010
 
-The following outlines the Volcom and Electric regulatory, compliance, and quality testing program. This protocol is designed to ensure that all products meet or exceed safety and regulatory standards required by government entities in all territories where our products are distributed. 
+The following outlines the Volcom and Electric regulatory, compliance, and quality testing program. This protocol is designed to ensure that all products meet or exceed safety and regulatory standards required by government entities in all territories where our products are distributed.
 
 Volcom and Electric Apparel and Accessories
 
@@ -313,11 +313,11 @@ Raw Materials Suppliers: All regulated raw materials shall be identified with un
 
 Finished Goods Suppliers: Each season, Volcom testing and compliance personnel will identify all finished products that require testing prior to the start of production. Each vendor will receive a specific list of products and required tests. Some divisions require all products to be tested. Testing parameters are based on the nature of the product and the specific risks associated with that product.
 
-A detailed description of all specific test requirements can be found in the Volcom/Electric Product Testing Manual. This manual is available to all vendors and suppliers. Lab testing must be performed at approved third party CPSC accredited laboratories. Locations of these laboratories can be found at http://www.cpsc.gov/cgi-bin/labsearch/. SGS, Intertek, and Bureau Veritas are the approved laboratories for apparel. The current approved laboratory for accessories is SGS.  Tests received from any other laboratories are not acceptable. Testing fees are the responsibility of the vendor unless the production manager has authorized a specific payment arrangement prior to testing. 
+A detailed description of all specific test requirements can be found in the Volcom/Electric Product Testing Manual. This manual is available to all vendors and suppliers. Lab testing must be performed at approved third party CPSC accredited laboratories. Locations of these laboratories can be found at http://www.cpsc.gov/cgi-bin/labsearch/. SGS, Intertek, and Bureau Veritas are the approved laboratories for apparel. The current approved laboratory for accessories is SGS.  Tests received from any other laboratories are not acceptable. Testing fees are the responsibility of the vendor unless the production manager has authorized a specific payment arrangement prior to testing.
 
 Electric Eyewear
 
-Electric testing and compliance personnel will identify all finished products that require testing as they are developed. Component parts such as hinges, lenses, logos, and frames will be submitted for testing by Electric or the vendor as is determined on a case by case basis. Testing is based on the government regulations in markets where Electric eyewear is sold. Testing fees will be paid for by Electric unless other arrangements are made and agreed upon prior to testing. Electric eyewear testing is only to be performed at SGS laboratories. Testing standards can be found in the Electric Visual Testing Manual. 
+Electric testing and compliance personnel will identify all finished products that require testing as they are developed. Component parts such as hinges, lenses, logos, and frames will be submitted for testing by Electric or the vendor as is determined on a case by case basis. Testing is based on the government regulations in markets where Electric eyewear is sold. Testing fees will be paid for by Electric unless other arrangements are made and agreed upon prior to testing. Electric eyewear testing is only to be performed at SGS laboratories. Testing standards can be found in the Electric Visual Testing Manual.
 
 Laboratory partners will e-mail all test results directly to the appropriate department. Volcom and Electric apparel reports shall be sent to VolcomPLR@volcom.com, accessories reports shall be sent to VolcomACCCreed@volcom.com, and Electric eyewear reports shall be sent to ElectricQPT@electricvisual.com. No hard copy of the report is required unless requested. Volcom compliance personnel will evaluate lab reports and provide feedback and further instructions if product improvements are required. Production cannot commence without lab report approval.
 </p>

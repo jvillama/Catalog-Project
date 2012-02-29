@@ -3,7 +3,7 @@ $(document).ready(function() {
 	/*
 	function clearOnInitialFocus( fieldName ){
 		var clearedOnce = false;
-		
+
 		document.getElementById( fieldName ).onfocus = (function(){
 			if (clearedOnce == false){
 				this.value = '';
@@ -16,22 +16,22 @@ $(document).ready(function() {
 		clearOnInitialFocus('password');
 	};
 	*/
-	
+
 	// hide product names in gallery thumbnails
 	$('.cat-product-gal-name').css({
 		bottom: '-40px',
 	});
-	
+
 	// initiate rollover
 	$('.cat-product-gal-thumb').hover(
 	function(){
 		$(this).children('.cat-product-gal-name').stop().animate({
-			bottom: '0px'													 
+			bottom: '0px'
 		}, 75)
 	},
 	function(){
 		$(this).children('.cat-product-gal-name').stop().animate({
-			bottom: '-40px'													 
+			bottom: '-40px'
 		}, 75)
 	});
 });

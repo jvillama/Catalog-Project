@@ -1,7 +1,7 @@
 <header id="retailer">
 	<div id="user-header">
 	{% if user.is_authenticated %}
-	
+
 	<p>Welcome, {% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %}
 
 		{% url catalog:logoutCatalog as logout_url %}
@@ -19,7 +19,7 @@
 	</p>
 	</div>
     <div id="retailer-logo" onclick="location.href='{% url apps.catalog.views.index %}'" style="cursor: pointer;"></div>
-    
+
     <div id="retailer-nav">
         <ul id="retailer-nav-list">
             <li><a href="{% url apps.catalog.views.index %}">Retailer Home</a></li>

@@ -6,7 +6,7 @@
  * $Date: 12-12-2008
  *
  *	ChangeLog:
- *  
+ *
  * $License : GPL,so any change to the code you should copy and paste this section,and would be nice to report this to me(renzi.mrc@gmail.com).
  */
 (function($)

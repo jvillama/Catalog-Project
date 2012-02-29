@@ -22,11 +22,11 @@ body, p, a, li, ul, ol, h1 {
 	font-family:Helvetica;
 	color:ccc;
 }
-.header-link { 
+.header-link {
 	font-size:9pt;
 	font-family:Helvetica;
 	text-decoration:none;
-	margin-right:1em; 
+	margin-right:1em;
 }
 .header-link:link { color:#ccc; }
 .header-link:visited { color:#ccc; }
@@ -58,17 +58,17 @@ body, p, a, li, ul, ol, h1 {
 	color:#ccc;
 }
 
-.nav-link {text-decoration:none;}    
-.nav-link:link {color:#aaa;}    
-.nav-link:visited {color:#aaa;}  
+.nav-link {text-decoration:none;}
+.nav-link:link {color:#aaa;}
+.nav-link:visited {color:#aaa;}
 .nav-link:hover {color:#fff;}
-.nav-link:active {color:#fff;} 
+.nav-link:active {color:#fff;}
 
-.nav-link-current {text-decoration:none;}    
-.nav-link-current:link {color:#fff; font-weight:bold;}  
-.nav-link-current:visited {color:#fff; font-weight:bold;}  
-.nav-link-current:hover {color:#fff; font-weight:bold;}  
-.nav-link-current:active {color:#fff; font-weight:bold;}  
+.nav-link-current {text-decoration:none;}
+.nav-link-current:link {color:#fff; font-weight:bold;}
+.nav-link-current:visited {color:#fff; font-weight:bold;}
+.nav-link-current:hover {color:#fff; font-weight:bold;}
+.nav-link-current:active {color:#fff; font-weight:bold;}
 
 
 
@@ -86,7 +86,7 @@ body, p, a, li, ul, ol, h1 {
 	text-indent: 1.5em;
 }
 
-.title { 
+.title {
 	line-height: 1 em;
 	font-size:24pt;
 	margin-top:1em;
@@ -129,10 +129,10 @@ body, p, a, li, ul, ol, h1 {
 	margin-top:15px;
 }
 
-.text a:link {color:#777;}    
-.text a:visited {color:#777;}  
+.text a:link {color:#777;}
+.text a:visited {color:#777;}
 .text a:hover {color:#777;}
-.text a:active {color:#777;} 
+.text a:active {color:#777;}
 
 .text ul {
 	margin:0px 15px 0px 2em;
@@ -145,7 +145,7 @@ body, p, a, li, ul, ol, h1 {
 
 
 .broken-link {
-	color:red; 
+	color:red;
 	text-decoration: underline;
 }
 
