@@ -98,7 +98,7 @@ def test(request, blah):
 def passwordChange(request):
 	'''
 	send_mail('Password Change Requested', request.user.username + ' is requesting for a new password.', request.user.email,
-		['jvillamarzo@gmail.com'], fail_silently=False)
+		fail_silently=False)
 	'''
 	return render_to_response('password_change_done.html',  {'user': request.user})
 	
